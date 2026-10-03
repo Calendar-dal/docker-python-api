@@ -1,6 +1,6 @@
 # Docker Python API
 
-A small FastAPI service that is ready to run locally or in a Docker container.
+A small FastAPI service with validated endpoints and Docker configuration for containerized deployment.
 
 **Problem → Solution → Result:** Lightweight calculation services still need validation, documentation, tests, and repeatable deployment. This API provides all four in a compact project that can be handed over and run consistently.
 
@@ -19,7 +19,7 @@ The service exposes validated JSON endpoints, interactive OpenAPI documentation,
 - `POST /statistics` for count, mean, minimum, and maximum
 - Pydantic validation with standard FastAPI error responses
 - Interactive documentation at `/docs`
-- Docker and local execution paths
+- Tested local execution plus Docker and Compose configuration
 
 ## Tech Stack
 
@@ -54,6 +54,8 @@ Docker:
 ```bash
 docker compose up --build
 ```
+
+The application and endpoints have been tested locally. The Docker configuration has been statically reviewed but was not built on the validation machine because Docker was unavailable.
 
 Open `http://localhost:8000/docs`. Run tests with `python -m pytest`.
 
